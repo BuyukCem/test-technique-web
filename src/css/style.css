@@ -1,0 +1,44 @@
+body {
+    font-family: "chivo", sans-serif;
+    background-color: #fef8f3;
+}
+
+.equipement-list {
+    text-align: center;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.equipement-list thead tr {
+    background-color: #febc3f;
+    color: #ffffff;
+    text-align: left;
+}
+
+.equipement-list thead tr th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.equipement-list td {
+    padding: 12px 15px;
+}
+
+.equipement-list tbody tr:nth-of-type(even) {
+    background-color: #ffffff;
+}
+
+.equipement-list tbody tr:hover {
+    color: #febc3f;
+}
+
+.equipement-list img {
+    width: 30%;
+    height: auto;
+}
