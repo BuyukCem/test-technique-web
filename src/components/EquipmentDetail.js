@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import {set_Checkpoints} from "../store/action/equipmentsAction";
 import {useDispatch, useSelector} from "react-redux";
 import EquipmentDescription from "./EquipmentDescription";
+import CheckpointList from "./CheckpointList";
 
 const EquipmentDetail = (props) => {
     const [getSelectedEquipment, setSelectedEquipment] = useState([])
@@ -35,33 +36,8 @@ const EquipmentDetail = (props) => {
                 </div>
 
                 <div className="caracteristiques">
-                    <h3>Caractéristiques : </h3>
-                    <table className="list">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>fault</th>
-                            <th>recommandation</th>
-                            <th>Photo</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {
-                            Object.keys(checkpoints)
-                                .filter((key) => checkpoints[key].equipmentKey == props.match.params.id)
-                                .map((item, index) => (
-                                    <>
-                                        <tr key={item}>
-                                            <td>{checkpoints[item].name}</td>
-                                            <td>{checkpoints[item].fault}</td>
-                                            <td> {checkpoints[item].recommandation}</td>
-                                            <td><img src={checkpoints[item].photo} alt=""/></td>
-                                        </tr>
-                                    </>
-                                ))
-                        }
-                        </tbody>
-                    </table>
+                    <h3>Points de contrôle et défauts associés : </h3>
+                        <CheckpointList checkpoints={checkpoints} id={props.match.params.id} />
                 </div>
             </div>
 

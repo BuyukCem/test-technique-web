@@ -22,8 +22,7 @@ const EquipmentList = props => {
             </tr>
             </thead>
             <tbody>
-            {Object.keys(equipments).map((item, index) => (
-
+            {Object.keys(equipments).map((item) => (
                 <Link to={{
                     pathname: `/equipment/` + item,
                     equipment: equipments[item]
