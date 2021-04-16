@@ -1,17 +1,17 @@
-import {SET_CHECKPOINTS_ACTION, SET_EQUIPEMENT_ACTION} from "../action/equipementsAction"
+import {SET_CHECKPOINTS_ACTION, SET_EQUIPEMENT_ACTION} from "../action/equipmentsAction"
 
-let EQUIPEMENT = [];
-let CHECKPOINTS = [];
+const EQUIPMENT = [];
+const CHECKPOINTS = [];
 
 const initialState = {
-    equipement: EQUIPEMENT,
+    equipment: EQUIPMENT,
     checkpoints: CHECKPOINTS,
 };
 
 const state = (state = initialState, action) => {
     switch (action.type) {
         case SET_EQUIPEMENT_ACTION:
-            return {...state, equipement: action.equipement};
+            return {...state, equipment: action.equipment};
 
         case SET_CHECKPOINTS_ACTION:
             return {...state, checkpoints: action.checkpoints};

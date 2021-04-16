@@ -1,18 +1,20 @@
 import {database} from "../../utils/firebase";
 import React from "react";
 
-const initialState = []
+
 export const SET_EQUIPEMENT_ACTION = "SET_EQUIPEMENT_ACTION"
 export const SET_CHECKPOINTS_ACTION = "SET_CHECKPOINTS_ACTION"
 
-export const set_Equipement = () => {
+//Je suis vraiment pas content du fonctionnement des deux fonctions
+//J'ai pas réussis  à sortir  [snapshot.val()]
+export const set_Equipment = () => {
     return async dispatch => {
         const equipments = database.ref('Equipments')
             let data
             await equipments.once('value', snapshot => {
                data = [snapshot.val()]
             })
-        dispatch({ type: SET_EQUIPEMENT_ACTION, equipement: data[0] });
+        dispatch({ type: SET_EQUIPEMENT_ACTION, equipment: data[0] });
     };
 };
 
