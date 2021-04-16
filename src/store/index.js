@@ -3,7 +3,6 @@ import ReduxThunk from "redux-thunk";
 import equipementReducers from "./reducers/equipementReducers"
 const {createStore, combineReducers, applyMiddleware} = require("redux");
 
-
 const rootReducer = combineReducers({
     equipement: equipementReducers
 });
