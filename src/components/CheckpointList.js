@@ -2,7 +2,7 @@ import React from 'react';
 
 const Checkpoint = ({checkpoints, id}) => {
 
-    const generateRowCheckpoint = checkpoints.filter((row, key) => row.value.equipmentKey == id).map(row =>
+    const generateRowCheckpoint = checkpoints.filter((row) => row.value.equipmentKey == id).map(row =>
         <div>
             <tr key={row.key}>
                 <td>{row.value.name}</td>

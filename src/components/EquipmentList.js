@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {set_Equipment} from "../store/action/action";
 import {Link} from 'react-router-dom';
 
-const EquipmentList = props => {
+const EquipmentList = () => {
     const dispatch = useDispatch();
     const equipments = useSelector(state => state.equipment.equipment);
 
@@ -24,20 +24,29 @@ const EquipmentList = props => {
             </tr>
         </Link>
     )
+
+    function handleChange(e) {
+        console.log(e.target.value);
+    }
+
     return (
-        <table className="list">
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Domain</th>
-                <th>Défauts associés</th>
-                <th>Photo</th>
-            </tr>
-            </thead>
-            <tbody>
-            {generateRow}
-            </tbody>
-        </table>
+        <>
+            <input name="firstName" onChange={handleChange} />
+            <table className="list">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Domain</th>
+                    <th>Défauts associés</th>
+                    <th>Photo</th>
+                </tr>
+                </thead>
+                <tbody>
+                {generateRow}
+                </tbody>
+            </table>
+        </>
+
     )
 }
 export default EquipmentList

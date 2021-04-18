@@ -4,7 +4,7 @@ const EquipementDesctiption = ({equipement: equipment}) => {
     return (
         <>
             <div className="photo">
-                <img src={equipment.photo}/>
+                <img src={equipment.photo} alt={equipment.name}/>
             </div>
             <div className="description">
                 <h2>{equipment.name}</h2>

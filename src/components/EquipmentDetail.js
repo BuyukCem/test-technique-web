@@ -35,7 +35,7 @@ const EquipmentDetail = (props) => {
                     <EquipmentDescription equipement={getSelectedEquipment}/>
                 </div>
 
-                <div className="caracteristiques">
+                <div className="characteristics">
                     <h3>Points de contrôle et défauts associés : </h3>
                         <CheckpointList checkpoints={checkpoints} id={props.match.params.id} />
                 </div>

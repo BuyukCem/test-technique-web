@@ -9,7 +9,7 @@ export const set_Equipment = () => {
     return async dispatch => {
         const checkpoints = database.ref('Equipments')
         let data = []
-        await checkpoints.once('value', snapshot => {
+        await checkpoints.orderByChild('name').once('value', snapshot => {
             snapshot.forEach((childSnapshot) => {
                 const value = childSnapshot.val();
                 data.push({ key: childSnapshot.key, value });
