@@ -1,6 +1,18 @@
 import React from 'react';
 
 const Checkpoint = ({checkpoints, id}) => {
+
+    const generateRowCheckpoint = checkpoints.filter((row, key) => row.value.equipmentKey == id).map(row =>
+        <div>
+            <tr key={row.key}>
+                <td>{row.value.name}</td>
+                <td>{row.value.fault}</td>
+                <td> {row.value.recommandation}</td>
+                <td><img src={row.value.photo} alt=""/></td>
+            </tr>
+        </div>
+    )
+
     return (
         <table className="list">
             <thead>
@@ -12,20 +24,7 @@ const Checkpoint = ({checkpoints, id}) => {
             </tr>
             </thead>
             <tbody>
-            {
-                Object.keys(checkpoints)
-                    .filter((key) => checkpoints[key].equipmentKey == id)
-                    .map((item) => (
-                        <>
-                            <tr key={item}>
-                                <td>{checkpoints[item].name}</td>
-                                <td>{checkpoints[item].fault}</td>
-                                <td> {checkpoints[item].recommandation}</td>
-                                <td><img src={checkpoints[item].photo} alt=""/></td>
-                            </tr>
-                        </>
-                    ))
-            }
+            {generateRowCheckpoint}
             </tbody>
         </table>
     )

@@ -16,7 +16,7 @@ const EquipmentDetail = (props) => {
         if (!props.location.equipment) {
             setSelectedEquipment(JSON.parse(localStorage.getItem('selected_equipment')))
         } else {
-            localStorage.setItem('selected_equipment', JSON.stringify(props.location.equipment));
+            localStorage.setItem('selected_equipment', JSON.stringify(props.location.equipment.value));
             setSelectedEquipment(JSON.parse(localStorage.getItem('selected_equipment')))
         }
 

@@ -11,6 +11,19 @@ const EquipmentList = props => {
         dispatch(set_Equipment());
     }, [dispatch]);
 
+    const generateRow = equipments.map(row =>
+        <Link to={{
+            pathname: `/equipment/` + row.key,
+            equipment: row
+        }}>
+            <tr key={row.key}>
+                <td>{row.value.name}</td>
+                <td>{row.value.domain}</td>
+                <td>{row.value.nbFaults}</td>
+                <td><img src={row.value.photo} alt={row.value.name}/></td>
+            </tr>
+        </Link>
+    )
     return (
         <table className="list">
             <thead>
@@ -22,19 +35,7 @@ const EquipmentList = props => {
             </tr>
             </thead>
             <tbody>
-            {Object.keys(equipments).map((item) => (
-                <Link to={{
-                    pathname: `/equipment/` + item,
-                    equipment: equipments[item]
-                }}>
-                    <tr key={item}>
-                        <td>{equipments[item].name}</td>
-                        <td>{equipments[item].domain}</td>
-                        <td> {equipments[item].nbFaults}</td>
-                        <td><img src={equipments[item].photo} alt=""/></td>
-                    </tr>
-                </Link>
-            ))}
+            {generateRow}
             </tbody>
         </table>
     )
