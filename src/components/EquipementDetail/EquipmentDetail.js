@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
-import {set_Checkpoints} from "../store/action/action";
+
 import {useDispatch, useSelector} from "react-redux";
 import EquipmentDescription from "./EquipmentDescription";
 import CheckpointList from "./CheckpointList";
+import {set_Checkpoints} from "../../store/action/action";
 
 const EquipmentDetail = (props) => {
     const [getSelectedEquipment, setSelectedEquipment] = useState([])

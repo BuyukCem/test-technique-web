@@ -1,5 +1,5 @@
-import {SET_EQUIPEMENT_ACTION} from "../action/equipmentsAction"
-import {SET_CHECKPOINTS_ACTION} from "../action/checkpointsAction"
+import {SET_EQUIPEMENT_ACTION} from "../action/action"
+import {SET_CHECKPOINTS_ACTION} from "../action/action"
 
 const EQUIPMENT = [];
 const CHECKPOINTS = [];

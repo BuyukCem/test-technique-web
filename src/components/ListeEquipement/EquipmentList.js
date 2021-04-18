@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {set_Equipment} from "../store/action/action";
+import {set_Equipment} from "../store/action/action.js";
 import {Link} from 'react-router-dom';
 
 const EquipmentList = props => {
